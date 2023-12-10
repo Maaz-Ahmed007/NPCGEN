@@ -1,3 +1,5 @@
+'use client'
+
 import StatsCard from "@/components/statscard/statscard";
 
 export default function Home() {

@@ -1,5 +1,3 @@
-'use client'
-
 import { Trash } from "lucide-react";
 
 import { Button } from "../ui/button";
@@ -18,8 +16,6 @@ import { Label } from "../ui/label";
 
 import MaximizeBtn from "../maximizeBtn";
 
-import { useState, useEffect } from "react";
-
 export default function MaximizedCard({
     npcName,
     npcDescription,
@@ -27,7 +23,6 @@ export default function MaximizedCard({
     npcName?: string
     npcDescription?: string
 }) {
-
     return (
         <Dialog>
             <DialogTrigger asChild>

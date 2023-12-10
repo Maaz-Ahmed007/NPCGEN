@@ -5,8 +5,8 @@ import {
     CardFooter,
     CardHeader,
     CardTitle,
-} from "../ui/card";
-import MaximizedCard from "./maximizedcard";
+} from "../ui/card"
+import MaximizedCard from "./maximizedcard"
 
 export default function StatsCard({
     npcName,
@@ -53,7 +53,7 @@ export default function StatsCard({
                         </div>
                     </div>
                 </div>
-                {/* Maximize Btn */}
+
                 <MaximizedCard npcName={npcName} npcDescription={npcDescription} />
             </CardFooter>
         </Card>
