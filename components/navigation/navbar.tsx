@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input'
 import HamburgerBtn from '../hamburgerBtn'
 
 import Link from 'next/link'
+import UploadCardBtn from '../uploadCardBtn'
 
 export default function Navbar({
     isOpen,
@@ -38,9 +39,7 @@ export default function Navbar({
                                 </Link>
                             </li>
                             <li className="hidden md:flex">
-                                <Link href="/">
-                                    <Button variant='outline'>Add NPC</Button>
-                                </Link>
+                                <UploadCardBtn />
                             </li>
                             <li>
                                 <HamburgerBtn className="md:hidden" isOpen={isOpen} toggle={toggle}></HamburgerBtn>

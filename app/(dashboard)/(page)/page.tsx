@@ -1,9 +1,11 @@
 'use client'
 
+import { useEffect, useState } from "react";
+
 import Navigation from "@/components/navigation/navigation"
 import StatsCard from "@/components/statscard/statscard"
+
 import { Label } from "@/components/ui/label";
-import { useEffect, useState } from "react";
 
 export default function Home() {
 	const [npcData, setNpcData] = useState([])

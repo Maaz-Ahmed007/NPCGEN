@@ -14,6 +14,7 @@ import { Label } from "../ui/label";
 
 import MaximizeBtn from "../maximizeBtn";
 import DeleteCardBtn from "../deleteCardBtn";
+import DownloadCardBtn from "../downloadCardBtn";
 
 export default function MaximizedCard({
     npcId,
@@ -66,6 +67,7 @@ export default function MaximizedCard({
                 </div>
                 <DialogFooter>
                     <div className="flex justify-end gap-4">
+                        <DownloadCardBtn npcId={npcId} />
                         <DeleteCardBtn npcId={npcId} />
 
                         <DialogClose className="flex gap-4">
