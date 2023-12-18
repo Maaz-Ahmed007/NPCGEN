@@ -3,14 +3,16 @@
 import Navigation from "@/components/navigation/navigation"
 import StatsCard from "@/components/statscard/statscard"
 import { Label } from "@/components/ui/label";
+import { useEffect, useState } from "react";
 
 export default function Home() {
-	const npcList = () => {
-		const storedData = localStorage.getItem('npclist');
-		return storedData ? JSON.parse(storedData) : [];
-	}
+	const [npcData, setNpcData] = useState([])
 
-	const npcData = npcList()
+	useEffect(() => {
+		const storedData = localStorage.getItem('npclist')
+		setNpcData(storedData ? JSON.parse(storedData) : [])
+	}, [])
+
 	return (
 		<>
 			<Navigation />
