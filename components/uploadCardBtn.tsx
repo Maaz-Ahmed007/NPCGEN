@@ -70,7 +70,7 @@ export default function UploadCardBtn() {
                 <DialogHeader>
                     <DialogTitle>Upload your NPC</DialogTitle>
                     <DialogDescription>
-                        Upload a '.JSON' file that contains this format and do not make mistakes or it will cause errors in uploading or displaying your npc.
+                        Upload a (.JSON) file that contains this format and do not make mistakes or it will cause errors in uploading or displaying your npc.
                     </DialogDescription>
                 </DialogHeader>
                 <Textarea
