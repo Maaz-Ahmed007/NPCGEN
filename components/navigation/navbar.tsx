@@ -5,7 +5,6 @@ import { Input } from '@/components/ui/input'
 import HamburgerBtn from '../hamburgerBtn'
 
 import Link from 'next/link'
-// import { useState } from 'react'
 
 export default function Navbar({
     isOpen,

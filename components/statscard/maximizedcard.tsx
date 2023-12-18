@@ -1,6 +1,3 @@
-import { Trash } from "lucide-react";
-
-import { Button } from "../ui/button";
 import {
     Dialog,
     DialogContent,
@@ -11,21 +8,34 @@ import {
     DialogTrigger,
     DialogClose
 } from "../ui/dialog";
+import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 
 import MaximizeBtn from "../maximizeBtn";
+import DeleteCardBtn from "../deleteCardBtn";
 
 export default function MaximizedCard({
+    npcId,
     npcName,
     npcDescription,
+    npcRace,
+    npcAttributes
 }: {
-    npcName?: string
+    npcId: any
+    npcName: string
     npcDescription?: string
+    npcRace: string
+    npcAttributes: {
+        bod: number
+        dex: number
+        mnd: number
+        cha: number
+    }
 }) {
     return (
         <Dialog>
-            <DialogTrigger asChild>
+            <DialogTrigger>
                 <MaximizeBtn />
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
@@ -56,10 +66,7 @@ export default function MaximizedCard({
                 </div>
                 <DialogFooter>
                     <div className="flex justify-end gap-4">
-                        <Button
-                            variant="destructive"
-                        // onClick={() => { }}
-                        ><Trash /></Button>
+                        <DeleteCardBtn npcId={npcId} />
 
                         <DialogClose className="flex gap-4">
                             <Button type="submit">Save changes</Button>

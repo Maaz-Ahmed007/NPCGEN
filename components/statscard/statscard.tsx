@@ -9,11 +9,22 @@ import {
 import MaximizedCard from "./maximizedcard"
 
 export default function StatsCard({
+    npcId,
     npcName,
     npcDescription,
+    npcRace,
+    npcAttributes
 }: {
-    npcName?: string
+    npcId: any
+    npcName: string
     npcDescription?: string
+    npcRace: string
+    npcAttributes: {
+        bod: number
+        dex: number
+        mnd: number
+        cha: number
+    }
 }) {
     return (
         <Card className="w-[300px] md:w-[280px]">
@@ -24,7 +35,8 @@ export default function StatsCard({
                 </CardDescription>
             </CardHeader>
             <CardContent>
-                <p>Stats Card Content here... like race, class, traits, gears, etc.</p>
+                <p>Race: <span className="text-sm rounded-md border px-1 text-gray-700 border-gray-600 bg-gray-100 font-bold">{npcRace}</span></p>
+                <p>Class: <span className="text-sm rounded-md border px-1 text-gray-700 border-gray-600 bg-gray-100 font-bold">Not yet ready</span></p>
             </CardContent>
             <CardFooter>
                 {/* Attributes */}
@@ -36,25 +48,31 @@ export default function StatsCard({
                         <div className="flex space-x-2">
                             <div className="flex-row text-center">
                                 <p className="text-sm text-gray-700 text-muted-foreground">BOD</p>
-                                <span className="text-sm rounded-md border px-1 text-gray-700 border-gray-600 bg-gray-100 font-bold">16</span>
-                            </div>
-                            <div className="flex-row text-center">
-                                <p className="text-sm text-gray-700 text-muted-foreground">MND</p>
-                                <span className="text-sm rounded-md border px-1 text-gray-700 border-gray-600 bg-gray-100 font-bold">16</span>
-                            </div>
-                            <div className="flex-row text-center">
-                                <p className="text-sm text-gray-700 text-muted-foreground">CHA</p>
-                                <span className="text-sm rounded-md border px-1 text-gray-700 border-gray-600 bg-gray-100 font-bold">16</span>
+                                <span className="text-sm rounded-md border px-1 text-gray-700 border-gray-600 bg-gray-100 font-bold">{npcAttributes.bod}</span>
                             </div>
                             <div className="flex-row text-center">
                                 <p className="text-sm text-gray-700 text-muted-foreground">DEX</p>
-                                <span className="text-sm rounded-md border px-1 text-gray-700 border-gray-600 bg-gray-100 font-bold">16</span>
+                                <span className="text-sm rounded-md border px-1 text-gray-700 border-gray-600 bg-gray-100 font-bold">{npcAttributes.dex}</span>
+                            </div>
+                            <div className="flex-row text-center">
+                                <p className="text-sm text-gray-700 text-muted-foreground">MND</p>
+                                <span className="text-sm rounded-md border px-1 text-gray-700 border-gray-600 bg-gray-100 font-bold">{npcAttributes.mnd}</span>
+                            </div>
+                            <div className="flex-row text-center">
+                                <p className="text-sm text-gray-700 text-muted-foreground">CHA</p>
+                                <span className="text-sm rounded-md border px-1 text-gray-700 border-gray-600 bg-gray-100 font-bold">{npcAttributes.cha}</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <MaximizedCard npcName={npcName} npcDescription={npcDescription} />
+                <MaximizedCard
+                    npcId={npcId}
+                    npcName={npcName}
+                    npcDescription={npcDescription}
+                    npcRace={npcRace}
+                    npcAttributes={npcAttributes}
+                />
             </CardFooter>
         </Card>
     )

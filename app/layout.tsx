@@ -2,8 +2,6 @@ import type { Metadata } from 'next'
 import { Lusitana } from 'next/font/google'
 import './globals.css'
 
-import Navigation from '@/components/navigation/navigation'
-
 const lusitana = Lusitana({ weight: "400", subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -19,9 +17,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={lusitana.className}>
-                <Navigation />
                 {children}
-                {/* Footer */}
             </body>
         </html>
     )
