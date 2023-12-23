@@ -22,7 +22,7 @@ export default function NPCRace({
                 <SelectContent>
                     <SelectItem value='default'>none</SelectItem>
                     {races.map((race: any) => (
-                        <SelectItem value={race}>
+                        <SelectItem key={race.index} value={race}>
                             {race}
                         </SelectItem>
                     ))}

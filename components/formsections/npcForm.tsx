@@ -53,8 +53,6 @@ export default function NPCForm() {
         }
     })
 
-    const [previousRace, setPreviousRace] = useState<string | null>(null)
-
     const getPreviousData = () => {
         const previousData = localStorage.getItem('npclist');
         return previousData ? JSON.parse(previousData) : [];
@@ -62,15 +60,16 @@ export default function NPCForm() {
 
     const router = useRouter()
 
-    const handleAttributeSystem = (race: any) => {
+    const handleAttributeSystem = (race: string, bod: number, dex: number, mnd: number, cha: number) => {
+        const returnAttributes = NPCDistributeAttributePoints(race, bod, dex, mnd, cha)
 
     }
 
     useEffect(() => {
         const race = form.getValues('npcrace')
         const { bod, dex, mnd, cha } = form.getValues('npcattributes')
-        const returnAttributes = NPCDistributeAttributePoints(race, bod, dex, mnd, cha)
 
+        const distributedValues = handleAttributeSystem(race, bod, dex, mnd, cha)
     }, [form.getValues('npcrace')])
 
     const handleSubmit = (values: z.infer<typeof formSchema>) => {
