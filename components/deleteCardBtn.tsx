@@ -12,8 +12,7 @@ import {
     DialogTrigger,
     DialogClose
 } from "@/components/ui/dialog"
-import { Button } from "./ui/button"
-import { useRouter } from "next/navigation"
+import { Button } from "@/components/ui/button"
 
 export default function DeleteCardBtn({
     npcId
@@ -26,13 +25,10 @@ export default function DeleteCardBtn({
     }
 
     const npcData = npcList()
-    const router = useRouter()
 
     const handleClick = () => {
         const npcs = npcData.filter((npc: any) => npc.npcid !== npcId)
         localStorage.setItem('npclist', JSON.stringify(npcs))
-
-        router.refresh()
     }
     return (
         <Dialog>

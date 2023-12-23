@@ -2,9 +2,8 @@
 
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
-import { Button } from "./ui/button"
 import { FileUp } from "lucide-react"
-import { Input } from "./ui/input"
+
 import {
     Dialog,
     DialogContent,
@@ -12,10 +11,11 @@ import {
     DialogFooter,
     DialogHeader,
     DialogTitle,
-    DialogTrigger,
-    DialogClose
-} from "./ui/dialog";
-import { Textarea } from './ui/textarea';
+    DialogTrigger
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from '@/components/ui/textarea';
 
 export default function UploadCardBtn() {
     const [selectedFile, setSelectedFile] = useState(null)

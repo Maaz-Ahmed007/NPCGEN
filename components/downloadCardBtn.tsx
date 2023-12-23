@@ -1,6 +1,6 @@
-import { Button } from "./ui/button";
-
 import { FileDown } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
 
 export default function DownloadCardBtn({
     npcId

@@ -1,11 +1,12 @@
 'use client'
 
+import Link from 'next/link'
+
+import HamburgerBtn from '@/components/hamburgerBtn'
+import UploadCardBtn from '@/components/uploadCardBtn'
+
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import HamburgerBtn from '../hamburgerBtn'
-
-import Link from 'next/link'
-import UploadCardBtn from '../uploadCardBtn'
 
 export default function Navbar({
     isOpen,

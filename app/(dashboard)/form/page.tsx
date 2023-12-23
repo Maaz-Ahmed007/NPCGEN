@@ -1,10 +1,10 @@
-import FormNavbar from '@/components/navigation/formNavbar'
-import NPCForm from '@/components/npcForm'
+import Navigation from '@/components/navigation/navigation'
+import NPCForm from '@/components/formsections/npcForm'
 
 export default function Form() {
     return (
         <>
-            <FormNavbar />
+            <Navigation />
             <NPCForm />
         </>
     )

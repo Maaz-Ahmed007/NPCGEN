@@ -1,4 +1,4 @@
-import FormCancelBtn from "../formCancelBtn";
+import FormCancelBtn from "@/components/formCancelBtn";
 
 export default function FormNavbar() {
     return (

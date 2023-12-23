@@ -1,9 +1,9 @@
 'use client'
 
-import Navbar from './navbar'
-import Sidebar from './sidebar'
-
 import { useState } from 'react'
+
+import Navbar from '@/components/navigation/navbar'
+import Sidebar from '@/components/navigation/sidebar'
 
 export default function Navigation() {
     const [isOpen, setIsOpen] = useState(false)

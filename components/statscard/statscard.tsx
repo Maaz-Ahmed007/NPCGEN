@@ -1,3 +1,5 @@
+import MaximizedCard from "@/components/statscard/maximizedcard"
+
 import {
     Card,
     CardContent,
@@ -5,8 +7,7 @@ import {
     CardFooter,
     CardHeader,
     CardTitle,
-} from "../ui/card"
-import MaximizedCard from "./maximizedcard"
+} from "@/components/ui/card"
 
 export default function StatsCard({
     npcId,

@@ -1,8 +1,10 @@
 'use client'
 
 import Link from "next/link"
-import HamburgerBtn from "../hamburgerBtn"
-import { Button } from "../ui/button"
+
+import HamburgerBtn from "@/components/hamburgerBtn"
+
+import { Button } from "@/components/ui/button"
 
 export default function Sidebar({
     isOpen,

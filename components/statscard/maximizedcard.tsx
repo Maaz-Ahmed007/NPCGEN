@@ -1,3 +1,7 @@
+import MaximizeBtn from "@/components/maximizeBtn";
+import DeleteCardBtn from "@/components/deleteCardBtn";
+import DownloadCardBtn from "@/components/downloadCardBtn";
+
 import {
     Dialog,
     DialogContent,
@@ -7,14 +11,11 @@ import {
     DialogTitle,
     DialogTrigger,
     DialogClose
-} from "../ui/dialog";
-import { Button } from "../ui/button";
-import { Input } from "../ui/input";
-import { Label } from "../ui/label";
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
-import MaximizeBtn from "../maximizeBtn";
-import DeleteCardBtn from "../deleteCardBtn";
-import DownloadCardBtn from "../downloadCardBtn";
 
 export default function MaximizedCard({
     npcId,
