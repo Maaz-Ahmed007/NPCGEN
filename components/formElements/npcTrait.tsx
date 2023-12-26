@@ -38,7 +38,7 @@ export default function NPCTrait({
     useEffect(() => {
         const race = form.getValues('npcrace')
         handleTraits((race))
-    }, [raceChanged])
+    }, [form, raceChanged])
 
     return (
         <>
