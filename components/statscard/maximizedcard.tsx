@@ -15,6 +15,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { stringify } from "querystring";
 
 
 export default function MaximizedCard({
@@ -22,12 +23,14 @@ export default function MaximizedCard({
     npcName,
     npcDescription,
     npcRace,
+    npcTrait,
     npcAttributes
 }: {
     npcId: any
     npcName: string
     npcDescription?: string
     npcRace: string
+    npcTrait: string
     npcAttributes: {
         bod: number
         dex: number
@@ -42,29 +45,50 @@ export default function MaximizedCard({
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
                 <DialogHeader>
-                    <DialogTitle>Edit NPC CARD</DialogTitle>
+                    <DialogTitle>Edit {npcName} CARD</DialogTitle>
                     <DialogDescription>
-                        NPC description and data is here...
+                        {npcDescription ? npcDescription : 'There is no description for this NPC.'}
                     </DialogDescription>
                 </DialogHeader>
                 {/* Data here */}
                 <div className="grid gap-4 py-4">
                     <div className="grid grid-cols-4 items-center gap-4">
-                        <Label htmlFor="name" className="text-right">Name</Label>
+                        <Label htmlFor="name" className="text-right">Name:</Label>
                         <Input
                             id="name"
                             defaultValue={npcName ? npcName : "Npc Name"}
-                            className="col-span-3"
+                            className="col-span-3 capitalize"
+                            disabled
                         />
                     </div>
                     <div className="grid grid-cols-4 items-center gap-4">
-                        <Label htmlFor="description" className="text-right">Description</Label>
+                        <Label htmlFor="race" className="text-right">Race:</Label>
                         <Input
-                            id="description"
-                            defaultValue={npcDescription ? npcDescription : "Npc Description"}
-                            className="col-span-3"
+                            id="race"
+                            defaultValue={npcRace ? npcRace : "Npc Race None"}
+                            className="col-span-3 capitalize"
+                            disabled
                         />
                     </div>
+                    <div className="grid grid-cols-4 items-center gap-4">
+                        <Label htmlFor="trait" className="text-right">Trait:</Label>
+                        <Input
+                            id="trait"
+                            defaultValue={npcTrait ? npcTrait : "Npc Trait None"}
+                            className="col-span-3 capitalize"
+                            disabled
+                        />
+                    </div>
+                    <div className="grid grid-cols-4 items-center gap-4">
+                        <Label htmlFor="attributes" className="text-right">Attributes:</Label>
+                        <Input
+                            id="attributes"
+                            defaultValue={`BOD:${npcAttributes.bod} DEX:${npcAttributes.dex} MND:${npcAttributes.mnd} CHA:${npcAttributes.cha}`}
+                            className="col-span-3"
+                            disabled
+                        />
+                    </div>
+
                 </div>
                 <DialogFooter>
                     <div className="flex justify-end gap-4">

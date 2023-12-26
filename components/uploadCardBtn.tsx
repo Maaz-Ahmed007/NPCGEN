@@ -1,8 +1,8 @@
 'use client'
 
-import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { FileUp } from "lucide-react"
+import useLocalStorage from '@/lib/localStorage';
 
 import {
     Dialog,
@@ -18,43 +18,25 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from '@/components/ui/textarea';
 
 export default function UploadCardBtn() {
+    const [npcData, setNpcData] = useLocalStorage("npclist", "")
     const [selectedFile, setSelectedFile] = useState(null)
-    const router = useRouter()
 
     const handleFileChange = (event: any) => {
         const file = event.target.files[0]
         setSelectedFile(file)
     }
 
-    const getPreviousData = () => {
-        const previousData = localStorage.getItem('npclist');
-        return previousData ? JSON.parse(previousData) : [];
-    }
-
     const handleFileUpload = () => {
-        router.refresh()
         if (selectedFile) {
             const reader = new FileReader()
 
             reader.onload = (e: any) => {
-                try {
-                    // Parse the JSON data from the uploaded file
-                    const npcData = JSON.parse(e.target.result)
+                const existingData = npcData
+                const newData = [...existingData, e.target.value]
+                setNpcData(newData)
 
-                    // Get existing data from local storage
-                    const existingData = getPreviousData()
-
-                    // Add the new NPC data to the existing data
-                    const newData = [...existingData, npcData]
-
-                    // Save the updated data to local storage
-                    localStorage.setItem('npclist', JSON.stringify(newData))
-
-                    // Optionally, you can reset the selectedFile state
-                    setSelectedFile(null)
-                } catch (error) {
-                    console.error('Error parsing JSON:', error)
-                }
+                // Optionally, you can reset the selectedFile state
+                setSelectedFile(null)
             }
 
             reader.readAsText(selectedFile)

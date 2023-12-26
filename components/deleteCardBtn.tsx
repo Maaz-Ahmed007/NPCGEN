@@ -1,4 +1,4 @@
-'use client'
+import useLocalStorage from "@/lib/localStorage"
 
 import { Trash } from "lucide-react"
 
@@ -9,8 +9,7 @@ import {
     DialogFooter,
     DialogHeader,
     DialogTitle,
-    DialogTrigger,
-    DialogClose
+    DialogTrigger
 } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 
@@ -19,17 +18,13 @@ export default function DeleteCardBtn({
 }: {
     npcId: any
 }) {
-    const npcList = () => {
-        const storedData = localStorage.getItem('npclist');
-        return storedData ? JSON.parse(storedData) : [];
-    }
-
-    const npcData = npcList()
+    const [npcData, setNpcData] = useLocalStorage("npclist", "")
 
     const handleClick = () => {
         const npcs = npcData.filter((npc: any) => npc.npcid !== npcId)
-        localStorage.setItem('npclist', JSON.stringify(npcs))
+        setNpcData(npcs)
     }
+
     return (
         <Dialog>
             <DialogTrigger asChild>
@@ -43,10 +38,8 @@ export default function DeleteCardBtn({
                     <DialogDescription>Once deleted it will be unrecoverable!</DialogDescription>
                 </DialogHeader>
                 <DialogFooter>
-                    <DialogClose className="space-x-4">
-                        <Button variant="destructive" onClick={handleClick}>Delete</Button>
-                        <Button variant="outline">Cancel</Button>
-                    </DialogClose>
+                    <Button variant="destructive" onClick={handleClick}>Delete</Button>
+                    <Button variant="outline">Cancel</Button>
                 </DialogFooter>
             </DialogContent>
         </Dialog>

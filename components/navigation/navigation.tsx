@@ -13,8 +13,8 @@ export default function Navigation() {
 
     return (
         <>
-            <Sidebar isOpen={isOpen} toggle={toggle} />
             <Navbar isOpen={isOpen} toggle={toggle} />
+            <Sidebar isOpen={isOpen} toggle={toggle} />
         </>
     )
 }
