@@ -18,6 +18,7 @@ export default function Home() {
 						npcDescription={npc.npcdescription}
 						npcRace={npc.npcrace}
 						npcTrait={npc.npctrait}
+						npcClass={npc.npcclass}
 						npcAttributes={npc.npcattributes}
 					/>
 				))}

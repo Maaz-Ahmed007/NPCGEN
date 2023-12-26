@@ -24,6 +24,7 @@ export default function MaximizedCard({
     npcDescription,
     npcRace,
     npcTrait,
+    npcClass,
     npcAttributes
 }: {
     npcId: any
@@ -31,6 +32,7 @@ export default function MaximizedCard({
     npcDescription?: string
     npcRace: string
     npcTrait: string
+    npcClass: string
     npcAttributes: {
         bod: number
         dex: number
@@ -75,6 +77,15 @@ export default function MaximizedCard({
                         <Input
                             id="trait"
                             defaultValue={npcTrait ? npcTrait : "Npc Trait None"}
+                            className="col-span-3 capitalize"
+                            disabled
+                        />
+                    </div>
+                    <div className="grid grid-cols-4 items-center gap-4">
+                        <Label htmlFor="class" className="text-right">Class:</Label>
+                        <Input
+                            id="class"
+                            defaultValue={npcClass ? npcClass : "Npc Class None"}
                             className="col-span-3 capitalize"
                             disabled
                         />

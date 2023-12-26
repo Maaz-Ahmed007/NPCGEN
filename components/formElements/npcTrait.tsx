@@ -17,7 +17,7 @@ export default function NPCTrait({
 }: {
     field: any
     form: any
-    raceChanged: any
+    raceChanged: boolean
 }) {
     const [trait, setTrait] = useState('none')
 

@@ -15,6 +15,7 @@ export default function StatsCard({
     npcDescription,
     npcRace,
     npcTrait,
+    npcClass,
     npcAttributes
 }: {
     npcId: any
@@ -22,6 +23,7 @@ export default function StatsCard({
     npcDescription?: string
     npcRace: string
     npcTrait: string
+    npcClass: string
     npcAttributes: {
         bod: number
         dex: number
@@ -38,8 +40,9 @@ export default function StatsCard({
                 </CardDescription>
             </CardHeader>
             <CardContent>
-                <p>Race: <span className="text-sm rounded-md border px-1 text-gray-700 border-gray-600 bg-gray-100 font-bold capitalize">{npcRace}</span></p>
-                <p>Traits: <span className="text-sm rounded-md border px-1 text-gray-700 border-gray-600 bg-gray-100 font-bold capitalize">{npcTrait}</span></p>
+                <p>Race: <span className="text-sm rounded-md border px-1 text-gray-700 border-gray-600 bg-gray-100 font-bold capitalize">{npcRace ? npcRace : "Npc Race None"}</span></p>
+                <p>Traits: <span className="text-sm rounded-md border px-1 text-gray-700 border-gray-600 bg-gray-100 font-bold capitalize">{npcTrait ? npcTrait : "Npc Trait None"}</span></p>
+                <p>Class: <span className="text-sm rounded-md border px-1 text-gray-700 border-gray-600 bg-gray-100 font-bold capitalize">{npcClass ? npcClass : "Npc Class None"}</span></p>
             </CardContent>
             <CardFooter>
                 {/* Attributes */}
@@ -75,6 +78,7 @@ export default function StatsCard({
                     npcDescription={npcDescription}
                     npcRace={npcRace}
                     npcTrait={npcTrait}
+                    npcClass={npcClass}
                     npcAttributes={npcAttributes}
                 />
             </CardFooter>
