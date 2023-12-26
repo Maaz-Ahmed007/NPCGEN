@@ -38,7 +38,7 @@ export default function NPCTrait({
     useEffect(() => {
         const race = form.getValues('npcrace')
         handleTraits((race))
-    }, [raceChanged])
+    }, [form, raceChanged])
 
     return (
         <>
@@ -128,7 +128,7 @@ export default function NPCTrait({
                                 Trinket Master
                             </SelectItem>
                             <SelectItem value="Moment's Respite">
-                                Moment's Respite
+                                Moment&apos;s Respite
                             </SelectItem>
                         </>
                     )}
