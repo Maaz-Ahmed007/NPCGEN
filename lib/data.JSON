@@ -1,0 +1,14 @@
+{
+    "npcid": "480ed448-283d-40d8-9147-a8adb5c61d9",
+    "npcname": "Zorro",
+    "npcdescription": "",
+    "npcrace": "human",
+    "npctrait": "Trueshot",
+    "npcclass": "berserker(medium)",
+    "npcattributes": {
+        "bod": 6,
+        "dex": 7,
+        "mnd": 7,
+        "cha": 6
+    }
+}

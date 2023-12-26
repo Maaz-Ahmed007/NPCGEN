@@ -9,20 +9,27 @@ export default function Home() {
 
 	return (
 		<>
-			<div className="container flex flex-wrap -mx-4 gap-x-4 gap-y-10 pt-10 justify-center">
-				{npcData.map((npc: any) => (
-					<StatsCard
-						key={npc.npcid}
-						npcId={npc.npcid}
-						npcName={npc.npcname}
-						npcDescription={npc.npcdescription}
-						npcRace={npc.npcrace}
-						npcTrait={npc.npctrait}
-						npcClass={npc.npcclass}
-						npcAttributes={npc.npcattributes}
-					/>
-				))}
-			</div>
+			{npcData ? (
+				<div className="container flex flex-wrap -mx-4 gap-x-4 gap-y-10 pt-10 justify-center">
+					{npcData.map((npc: any) => (
+						<StatsCard
+							key={npc.npcid}
+							npcId={npc.npcid}
+							npcName={npc.npcname}
+							npcDescription={npc.npcdescription}
+							npcRace={npc.npcrace}
+							npcTrait={npc.npctrait}
+							npcClass={npc.npcclass}
+							npcAttributes={npc.npcattributes}
+						/>
+					))}
+				</div>
+			) : (
+				<div className="container flex flex-wrap -mx-4 gap-x-4 gap-y-10 pt-10 justify-center">
+					Your data is loading and in case you have no data please create some...
+				</div>
+			)
+			}
 		</>
 	)
 }
