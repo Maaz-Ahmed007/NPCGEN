@@ -175,7 +175,7 @@ export default function NPCForm() {
         const npcClass = form.getValues('npcclass')
         const attributes = adjustRaces(race, npcClass)
         form.setValue('npcattributes', attributes)
-    }, [raceChanged, classChanged])
+    }, [raceChanged, classChanged, adjustRaces, form])
 
     const handleSubmit = (values: z.infer<typeof formSchema>) => {
         const existingData = npcData
