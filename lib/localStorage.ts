@@ -5,7 +5,7 @@ import { useState } from "react";
 export default function useLocalStorage(key: any, initialValue: any) {
     const [state, setState] = useState(() => {
         try {
-            const serializedData = localStorage.getItem(key);
+            const serializedData = window.localStorage.getItem(key);
             return serializedData ? JSON.parse(serializedData) : initialValue;
         } catch (error) {
             console.log(
@@ -19,7 +19,7 @@ export default function useLocalStorage(key: any, initialValue: any) {
         try {
             const valueToStore =
                 value instanceof Function ? value(state) : value;
-            localStorage.setItem(key, JSON.stringify(valueToStore));
+            window.localStorage.setItem(key, JSON.stringify(valueToStore));
             setState(value);
             window.location.reload();
         } catch (error) {
