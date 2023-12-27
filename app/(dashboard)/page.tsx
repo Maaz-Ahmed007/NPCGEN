@@ -5,23 +5,7 @@ import useLocalStorage from "@/lib/localStorage"
 import StatsCard from "@/components/statscard/statscard"
 
 export default function Home() {
-	const defaultNpc = {
-		"npcid": "480ed448-283d-40d8-9147-a8adb5c61d9",
-		"npcname": "Zorro",
-		"npcdescription": "",
-		"npcrace": "human",
-		"npctrait": "Bonus",
-		"npcclass": "berserker(medium)",
-		"npcattributes": {
-			"bod": 6,
-			"dex": 7,
-			"mnd": 7,
-			"cha": 6
-		}
-	}
-	
 	const [npcData, setNpcData] = useLocalStorage("npclist", "")
-	setNpcData(defaultNpc)
 	return (
 		<>
 			{npcData ? (
