@@ -5,50 +5,21 @@ import useLocalStorage from "@/lib/localStorage"
 import StatsCard from "@/components/statscard/statscard"
 
 export default function Home() {
-	const defaultNpc = [
-		{
-			"npcid": "480ed448-283d-40d8-9147-a8adb5c61d9",
-			"npcname": "Zorro",
-			"npcdescription": "",
-			"npcrace": "human",
-			"npctrait": "Bonus",
-			"npcclass": "berserker(medium)",
-			"npcattributes": {
-				"bod": 6,
-				"dex": 7,
-				"mnd": 7,
-				"cha": 6
-			}
-		},
-		{
-			"npcid": "480ed44-283d-40d8-9147-a8adb5c61d9",
-			"npcname": "Bonnie",
-			"npcdescription": "",
-			"npcrace": "elf",
-			"npctrait": "Trueshot",
-			"npcclass": "berserker(medium)",
-			"npcattributes": {
-				"bod": 8,
-				"dex": 8,
-				"mnd": 8,
-				"cha": 8
-			}
-		},
-		{
-			"npcid": "480ed44-283d-40d8-9147-a8adb5c61d9",
-			"npcname": "Andrew",
-			"npcdescription": "",
-			"npcrace": "traiggoblin",
-			"npctrait": "",
-			"npcclass": "berserker(medium)",
-			"npcattributes": {
-				"bod": 9,
-				"dex": 9,
-				"mnd": 7,
-				"cha": 5
-			}
-		},
-	]
+	const defaultNpc = {
+		"npcid": "480ed448-283d-40d8-9147-a8adb5c61d9",
+		"npcname": "Zorro",
+		"npcdescription": "",
+		"npcrace": "human",
+		"npctrait": "Bonus",
+		"npcclass": "berserker(medium)",
+		"npcattributes": {
+			"bod": 6,
+			"dex": 7,
+			"mnd": 7,
+			"cha": 6
+		}
+	}
+	
 	const [npcData, setNpcData] = useLocalStorage("npclist", "")
 	setNpcData(defaultNpc)
 	return (
